@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:weightSum="2">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="10dp"
         android:text="Hanoi, VietNam"
         android:textColor="@color/white"
-        android:textSize="18sp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="4dp"
-        android:layout_gravity="center_horizontal"/>
+        android:textSize="18sp" />
 
     <android.support.percent.PercentRelativeLayout
         android:id="@+id/layout_circle_detail"
@@ -24,119 +24,113 @@
 
         <ImageView
             android:id="@+id/img_wind_pointer"
-            app:layout_heightPercent="96%"
-            app:layout_aspectRatio="100%"
             android:layout_centerInParent="true"
-            android:src="@mipmap/bg_widget_circle"/>
+            android:src="@mipmap/bg_widget_circle"
+            app:layout_aspectRatio="100%"
+            app:layout_heightPercent="96%" />
 
         <ImageView
             android:id="@+id/img_compass"
-            app:layout_heightPercent="96%"
-            app:layout_aspectRatio="100%"
+            android:layout_centerInParent="true"
             android:src="@mipmap/bg_widget_circle_compass_2"
-            android:layout_centerInParent="true"/>
+            app:layout_aspectRatio="100%"
+            app:layout_heightPercent="96%" />
 
         <ImageView
             android:id="@+id/img_current_state"
-            app:layout_widthPercent="50%"
-            app:layout_heightPercent="30%"
+            android:layout_centerInParent="true"
             android:src="@mipmap/wsymbol_sunny_interval"
-            android:layout_centerInParent="true"/>
+            app:layout_aspectRatio="160%"
+            app:layout_heightPercent="25%" />
 
         <View
             android:id="@+id/view_line_horizontal_left"
-            android:layout_width="60sp"
+            android:layout_width="55sp"
             android:layout_height="1dp"
-            android:background="@color/white"
-            android:layout_centerVertical="true" />
+            android:layout_centerVertical="true"
+            android:layout_alignLeft="@+id/img_compass"
+            android:background="@color/white" />
 
         <View
             android:id="@+id/view_line_horizontal_right"
-            android:layout_width="80sp"
+            android:layout_width="70sp"
             android:layout_height="1dp"
-            android:background="@color/white"
+            android:layout_alignRight="@+id/img_compass"
             android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"/>
+            android:background="@color/white" />
 
         <TextView
-            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
             android:text="N"
             android:textColor="@color/white"
-            android:textSize="13sp"
-            android:layout_centerHorizontal="true"
-            android:layout_alignTop="@+id/img_compass"/>
+            android:textSize="12sp"
+            app:layout_marginTopPercent="4%" />
 
         <TextView
-            android:layout_marginBottom="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
             android:text="S"
             android:textColor="@color/white"
-            android:textSize="13sp"
-            android:layout_centerHorizontal="true"
-            android:layout_alignBottom="@+id/img_compass"/>
+            android:textSize="12sp"
+            app:layout_marginBottomPercent="4%" />
 
         <TextView
-            android:layout_marginLeft="10dp"
+            android:id="@+id/txt_compass_west"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/img_compass"
+            android:layout_centerVertical="true"
             android:text="W"
             android:textColor="@color/white"
-            android:textSize="13sp"
-            android:layout_centerVertical="true"
-            android:layout_alignLeft="@+id/img_compass"/>
+            android:textSize="12sp" />
 
         <TextView
-            android:layout_marginRight="12dp"
+            android:id="@+id/txt_compass_east"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/img_compass"
+            android:layout_centerVertical="true"
             android:text="E"
             android:textColor="@color/white"
-            android:textSize="13sp"
-            android:layout_centerVertical="true"
-            android:layout_alignRight="@+id/img_compass"/>
+            android:textSize="12sp" />
 
         <RelativeLayout
             android:id="@+id/layout_temperature"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            app:layout_marginTopPercent="8%">
+            app:layout_marginTopPercent="7%">
 
-            <RelativeLayout
-                android:id="@+id/layout_temperature_content"
+            <TextView
+                android:id="@+id/txt_temperature"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true">
-
-                <TextView
-                    android:id="@+id/txt_temperature"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="29"
-                    android:textSize="54sp"
-                    android:textColor="@color/white"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="°C"
-                    android:layout_toRightOf="@+id/txt_temperature"
-                    android:textSize="14sp"
-                    android:textColor="@color/white"
-                    android:layout_marginTop="18sp"/>
-
-            </RelativeLayout>
+                android:layout_centerHorizontal="true"
+                android:text="29"
+                android:textColor="@color/white"
+                android:textSize="42sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Feels like 34°C"
-                android:layout_below="@+id/layout_temperature_content"
+                android:layout_marginTop="16sp"
+                android:layout_toRightOf="@+id/txt_temperature"
+                android:text="°C"
                 android:textColor="@color/white"
-                android:textSize="15sp"/>
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_temperature"
+                android:text="Feels like 34°C"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
 
         </RelativeLayout>
 
@@ -145,37 +139,39 @@
             android:id="@+id/layout_UV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/img_compass"
             app:layout_marginTopPercent="43%">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="UV Index: 4"
-                android:textSize="13sp"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white"
+                android:textSize="12sp" />
 
         </RelativeLayout>
 
         <RelativeLayout
-            app:layout_widthPercent="30%"
-            app:layout_heightPercent="40%"
+            android:id="@+id/layout_click_humidity"
+            android:layout_alignLeft="@+id/img_compass"
             android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
-            android:id="@+id/layout_click_humidity"/>
+            app:layout_aspectRatio="70%"
+            app:layout_heightPercent="40%" />
 
         <RelativeLayout
-            app:layout_widthPercent="30%"
-            app:layout_heightPercent="40%"
+            android:id="@+id/layout_click_precipitation"
+            android:layout_alignRight="@+id/img_compass"
             android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:id="@+id/layout_click_precipitation"/>
+            app:layout_aspectRatio="70%"
+            app:layout_heightPercent="40%" />
 
         <RelativeLayout
             android:id="@+id/layout_humidity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            app:layout_marginBottomPercent="38%">
+            android:layout_alignParentTop="true"
+            android:layout_alignLeft="@+id/img_compass"
+            app:layout_marginTopPercent="51.5%">
 
             <TextView
                 android:id="@+id/txt_humidity"
@@ -183,7 +179,7 @@
                 android:layout_height="wrap_content"
                 android:text="Humidity"
                 android:textColor="@color/white"
-                android:textSize="13sp" />
+                android:textSize="12sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -192,7 +188,7 @@
                 android:layout_centerHorizontal="true"
                 android:text="52%"
                 android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
 
         </RelativeLayout>
 
@@ -200,15 +196,15 @@
             android:id="@+id/layout_visibility"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
+            android:layout_alignRight="@+id/img_compass"
             app:layout_marginTopPercent="43%">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Visibility: 4 KM"
-                android:textSize="13sp"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white"
+                android:textSize="12sp" />
 
         </RelativeLayout>
 
@@ -216,27 +212,27 @@
             android:id="@+id/layout_precipitation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            app:layout_marginBottomPercent="38%">
+            android:layout_alignRight="@+id/img_compass"
+            android:layout_alignParentTop="true"
+            app:layout_marginTopPercent="51.5%">
 
             <TextView
                 android:id="@+id/txt_precipitation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
                 android:text="Precipitation"
                 android:textColor="@color/white"
-                android:textSize="13sp"
-                android:layout_centerHorizontal="true"/>
+                android:textSize="12sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/txt_precipitation"
+                android:layout_centerHorizontal="true"
                 android:text="60%"
                 android:textColor="@color/white"
-                android:textSize="20sp"
-                android:layout_centerHorizontal="true"/>
+                android:textSize="18sp" />
 
         </RelativeLayout>
 
@@ -244,34 +240,34 @@
             android:id="@+id/layout_bottom_main"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
             app:layout_marginBottomPercent="12%">
 
             <TextView
                 android:id="@+id/txt_day_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
                 android:text="Partly Cloudy"
                 android:textColor="@color/white"
-                android:textSize="17sp"
-                android:layout_centerHorizontal="true"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/txt_wind_speed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/txt_day_description"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="1dp"
                 android:text="Wind Speed: 3 KM/H"
                 android:textColor="@color/white"
-                android:layout_centerHorizontal="true"
-                android:textSize="13sp"
-                android:layout_marginTop="1dp"/>
+                android:textSize="12sp" />
 
             <RelativeLayout
-                android:layout_below="@+id/txt_wind_speed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_wind_speed"
                 android:layout_centerHorizontal="true">
 
                 <TextView
@@ -279,28 +275,28 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="19:18"
-                    android:textSize="40sp"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/white"
+                    android:textSize="32sp" />
 
                 <TextView
+                    android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10sp"
+                    android:layout_toRightOf="@+id/txt_clock_time"
                     android:text="14 NOV"
                     android:textColor="@color/white"
-                    android:layout_toRightOf="@+id/txt_clock_time"
-                    android:layout_marginTop="15sp"
-                    android:id="@+id/textView"
-                    android:textSize="14sp"/>
+                    android:textSize="12sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="MON"
-                    android:layout_toRightOf="@+id/txt_clock_time"
-                    android:layout_toEndOf="@+id/txt_clock_time"
                     android:layout_alignBaseline="@+id/txt_clock_time"
+                    android:layout_toEndOf="@+id/txt_clock_time"
+                    android:layout_toRightOf="@+id/txt_clock_time"
+                    android:text="MON"
                     android:textColor="@color/white"
-                    android:textSize="14sp"/>
+                    android:textSize="12sp" />
 
             </RelativeLayout>
 
@@ -316,31 +312,33 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true">
+            android:layout_centerVertical="true"
+            android:background="#40ffffff">
 
-            <TextView
-                android:id="@+id/txt_hourly"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hourly"
-                android:textSize="17sp"
-                android:textColor="@color/white"
-                android:layout_marginLeft="14dp"
-                android:layout_marginRight="14dp"
-                android:layout_centerVertical="true"/>
+            <!--<TextView-->
+                <!--android:id="@+id/txt_hourly"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:layout_marginLeft="14dp"-->
+                <!--android:layout_marginRight="14dp"-->
+                <!--android:text="Hourly"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="17sp" />-->
 
             <android.support.v7.widget.RecyclerView
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="4dp"
                 android:id="@+id/recycler_view"
-                android:layout_toRightOf="@+id/txt_hourly"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:scrollbars="horizontal"
                 android:fadeScrollbars="true"
+                android:overScrollMode="never"
                 android:scrollbarAlwaysDrawHorizontalTrack="true"
-                android:scrollbarStyle="outsideOverlay"
                 android:scrollbarSize="1dp"
+                android:scrollbarStyle="outsideOverlay"
                 android:scrollbarThumbHorizontal="@color/light_white"
-                android:overScrollMode="never"/>
+                android:scrollbars="horizontal" />
 
         </RelativeLayout>
 

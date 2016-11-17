@@ -16,6 +16,7 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.OvershootInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import dtui.fit.com.weatherapp.Adapter.TemperatureAdapter;
 import dtui.fit.com.weatherapp.Constant.ExampleHourlyTemperature;
@@ -74,12 +75,14 @@ public class DetailFragment extends Fragment {
         Log.d("Main", width + " " + height);
         int sizeCircleLayout = (int) (height * 0.96);
 
-        view.findViewById(R.id.layout_humidity).setTranslationX((float) (sizeCircleLayout * 0.17));
-        view.findViewById(R.id.layout_UV).setTranslationX((float) (sizeCircleLayout * 0.165));
-        view.findViewById(R.id.view_line_horizontal_left).setTranslationX((float) (sizeCircleLayout * 0.165));
-        view.findViewById(R.id.layout_visibility).setTranslationX((float) -(sizeCircleLayout * 0.155));
-        view.findViewById(R.id.layout_precipitation).setTranslationX((float) -(sizeCircleLayout * 0.155));
-        view.findViewById(R.id.view_line_horizontal_right).setTranslationX((float) -(sizeCircleLayout * 0.155));
+        view.findViewById(R.id.layout_humidity).setTranslationX((float) (sizeCircleLayout * 0.112));
+        view.findViewById(R.id.layout_UV).setTranslationX((float) (sizeCircleLayout * 0.1112));
+        view.findViewById(R.id.view_line_horizontal_left).setTranslationX((float) (sizeCircleLayout * 0.112));
+        view.findViewById(R.id.layout_visibility).setTranslationX((float) -(sizeCircleLayout * 0.112));
+        view.findViewById(R.id.layout_precipitation).setTranslationX((float) -(sizeCircleLayout * 0.112));
+        view.findViewById(R.id.view_line_horizontal_right).setTranslationX((float) -(sizeCircleLayout * 0.112));
+        view.findViewById(R.id.txt_compass_east).setTranslationX((float) -(sizeCircleLayout * 0.04));
+        view.findViewById(R.id.txt_compass_west).setTranslationX((float) (sizeCircleLayout * 0.03));
 
     }
 

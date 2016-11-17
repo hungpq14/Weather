@@ -13,7 +13,7 @@ import dtui.fit.com.weatherapp.R;
  */
 public class BaseToolbarActivity extends BaseFontActivity {
     private int layoutId;
-    private String toolbarText = "Booster";
+    private String toolbarText = "Weather";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
