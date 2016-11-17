@@ -94,6 +94,13 @@ public class MainActivity extends BaseFontActivity implements NavigationFragment
     public void onNavigationDrawerItemSelected(int position) {
         switch (position) {
             case (0): {
+                startActivity(new Intent(this, MapActivity.class));
+                drawerLayout.closeDrawer(GravityCompat.START);
+                break;
+            }
+            case (1): {
+                startActivity(new Intent(this, SettingActivity.class));
+                drawerLayout.closeDrawer(GravityCompat.START);
                 break;
             }
         }

@@ -20,7 +20,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
  */
 public class NavigationFragment extends Fragment {
     private NavigationDrawerCallbacks mCallbacks;
-    LinearLayout itemSetting;
+    LinearLayout itemSetting, itemMap;
 
 
     @Nullable
@@ -51,8 +51,10 @@ public class NavigationFragment extends Fragment {
 
     private void setListener() {
         itemSetting = (LinearLayout) getView().findViewById(R.id.navigation_item_setting);
+        itemMap = (LinearLayout) getView().findViewById(R.id.navigation_item_map);
 
         itemSetting.setOnClickListener(navClickItem);
+        itemMap.setOnClickListener(navClickItem);
 
     }
 
@@ -62,6 +64,8 @@ public class NavigationFragment extends Fragment {
         public void onClick(View v) {
             if (v.equals(itemSetting)) {
                 selectItem(0);
+            } else if (v.equals(itemMap)) {
+                selectItem(1);
             }
         }
     };
