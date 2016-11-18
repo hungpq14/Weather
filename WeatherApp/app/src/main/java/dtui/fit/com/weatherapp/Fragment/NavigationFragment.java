@@ -74,11 +74,12 @@ public class NavigationFragment extends Fragment {
                 View view = getView().findViewById(R.id.navigation_item_position);
                 ImageView img = (ImageView) getView().findViewById(R.id.img_expand);
                 if (view.getVisibility() == View.GONE){
+
                     view.setVisibility(View.VISIBLE);
-                    img.setImageResource(R.drawable.ic_expand);
+                    img.setImageResource(R.drawable.ic_arrow_down);
                 } else {
                     view.setVisibility(View.GONE);
-                    img.setImageResource(R.drawable.ic_collapse);
+                    img.setImageResource(R.drawable.ic_arrow_up);
                 }
             }
         }

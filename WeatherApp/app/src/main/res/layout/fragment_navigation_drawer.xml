@@ -8,6 +8,24 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:clickable="false"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:text="Version 1.0.0"
+            android:textColor="@color/black"
+            android:id="@+id/textView2"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:layout_marginTop="0dp"
         android:orientation="vertical">
@@ -65,11 +83,11 @@
 
             <ImageView
                 android:id="@+id/img_expand"
-                android:layout_width="20dp"
+                android:layout_width="12dp"
                 android:layout_gravity="center_vertical|left"
-                android:layout_marginRight="10dp"
-                app:srcCompat="@drawable/ic_collapse"
-                android:layout_height="20dp" />
+                android:layout_marginRight="14dp"
+                app:srcCompat="@drawable/ic_arrow_up"
+                android:layout_height="12dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -226,26 +244,6 @@
 
 
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:clickable="false"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:gravity="center"
-            android:text="Version 1.0.0"
-            android:textColor="@color/black"
-            android:id="@+id/textView2"
-            android:layout_weight="1" />
-    </LinearLayout>
-
-
 
 
 </android.support.design.widget.NavigationView>
