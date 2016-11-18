@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.NavigationView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/fragment_navigation"
     android:layout_width="wrap_content"
     android:layout_height="match_parent">
@@ -8,21 +9,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="0dp"
         android:orientation="vertical">
 
+
         <LinearLayout
-            android:id="@+id/navigation_item_setting"
+            android:id="@+id/navigation_item_weather"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:background="@drawable/drawer_selector_item">
+            android:background="#00aaff">
 
-            <!--<ImageView-->
-                <!--android:layout_width="36dp"-->
-                <!--android:layout_height="36dp"-->
-                <!--android:layout_gravity="center_vertical|left"-->
-                <!--android:layout_marginLeft="10dp"-->
-                <!--/>-->
 
             <TextView
                 android:layout_width="wrap_content"
@@ -30,10 +26,76 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="10dp"
                 android:layout_weight="1"
-                android:text="Setting"
-                android:textColor="@color/black"
+                android:text="Weather"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_gravity="center_vertical|left"
+                android:layout_marginRight="10dp"
+                app:srcCompat="@drawable/ic_bell"
+                android:layout_height="20dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navigation_item_location"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@drawable/drawer_selector_item">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_gravity="center_vertical|left"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/ic_marker"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="Location"
+                android:textColor="#444444"
                 android:textSize="15sp" />
 
+            <ImageView
+                android:id="@+id/img_expand"
+                android:layout_width="20dp"
+                android:layout_gravity="center_vertical|left"
+                android:layout_marginRight="10dp"
+                app:srcCompat="@drawable/ic_collapse"
+                android:layout_height="20dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navigation_item_position"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@drawable/drawer_selector_item"
+            android:visibility="gone">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="40dp"
+                android:layout_weight="1"
+                android:text="Hanoi"
+                android:textColor="#444444"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_gravity="center_vertical|left"
+                android:layout_marginRight="10dp"
+                app:srcCompat="@drawable/ic_position"
+                android:layout_height="20dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -42,12 +104,12 @@
             android:layout_height="55dp"
             android:background="@drawable/drawer_selector_item">
 
-            <!--<ImageView-->
-            <!--android:layout_width="36dp"-->
-            <!--android:layout_height="36dp"-->
-            <!--android:layout_gravity="center_vertical|left"-->
-            <!--android:layout_marginLeft="10dp"-->
-            <!--/>-->
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_gravity="center_vertical|left"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/ic_map"
+                android:layout_height="20dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -56,10 +118,112 @@
                 android:layout_marginLeft="10dp"
                 android:layout_weight="1"
                 android:text="Map"
-                android:textColor="@color/black"
+                android:textColor="#444444"
                 android:textSize="15sp" />
 
         </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navigation_item_setting"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@drawable/drawer_selector_item">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_gravity="center_vertical|left"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/ic_setting"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="Setting"
+                android:textColor="#444444"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/navigation_item_community"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@drawable/drawer_selector_item">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_gravity="center_vertical|left"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/ic_facebook"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="Community"
+                android:textColor="#444444"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navigation_item_share"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@drawable/drawer_selector_item">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_gravity="center_vertical|left"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/ic_share"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="Share"
+                android:textColor="#444444"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navigation_item_feedback"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@drawable/drawer_selector_item">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_gravity="center_vertical|left"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/ic_star"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="Feedback"
+                android:textColor="#444444"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
 
     </LinearLayout>
 
@@ -71,13 +235,17 @@
         android:orientation="horizontal">
 
         <TextView
-            fontPath="fonts/UTM Avo.ttf"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
             android:gravity="center"
             android:text="Version 1.0.0"
-            android:textColor="@color/black" />
-
+            android:textColor="@color/black"
+            android:id="@+id/textView2"
+            android:layout_weight="1" />
     </LinearLayout>
+
+
+
+
 </android.support.design.widget.NavigationView>

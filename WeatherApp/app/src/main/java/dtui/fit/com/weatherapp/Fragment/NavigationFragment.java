@@ -3,12 +3,14 @@ package dtui.fit.com.weatherapp.Fragment;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ToggleButton;
 
@@ -20,7 +22,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
  */
 public class NavigationFragment extends Fragment {
     private NavigationDrawerCallbacks mCallbacks;
-    LinearLayout itemSetting, itemMap;
+    LinearLayout itemSetting, itemMap, itemLocation;
 
 
     @Nullable
@@ -52,9 +54,11 @@ public class NavigationFragment extends Fragment {
     private void setListener() {
         itemSetting = (LinearLayout) getView().findViewById(R.id.navigation_item_setting);
         itemMap = (LinearLayout) getView().findViewById(R.id.navigation_item_map);
+        itemLocation = (LinearLayout) getView().findViewById(R.id.navigation_item_location);
 
         itemSetting.setOnClickListener(navClickItem);
         itemMap.setOnClickListener(navClickItem);
+        itemLocation.setOnClickListener(navClickItem);
 
     }
 
@@ -66,6 +70,16 @@ public class NavigationFragment extends Fragment {
                 selectItem(0);
             } else if (v.equals(itemMap)) {
                 selectItem(1);
+            } else if (v.equals(itemLocation)){
+                View view = getView().findViewById(R.id.navigation_item_position);
+                ImageView img = (ImageView) getView().findViewById(R.id.img_expand);
+                if (view.getVisibility() == View.GONE){
+                    view.setVisibility(View.VISIBLE);
+                    img.setImageResource(R.drawable.ic_expand);
+                } else {
+                    view.setVisibility(View.GONE);
+                    img.setImageResource(R.drawable.ic_collapse);
+                }
             }
         }
     };
