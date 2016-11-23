@@ -11,4 +11,5 @@
     <color name="light_white">#60ffffff</color>
 
     <color name="navigation_selector_background">#30ffffff</color>
+    <color name="transparent">#00000000</color>
 </resources>

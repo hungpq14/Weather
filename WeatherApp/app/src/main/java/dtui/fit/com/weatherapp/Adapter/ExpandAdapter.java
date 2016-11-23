@@ -73,7 +73,7 @@ public class ExpandAdapter extends BaseExpandableListAdapter {
         ImageView imgArrow = (ImageView) v.findViewById(R.id.weather);
         int bgColor  = b? Color.parseColor("#f7f7f7"):Color.WHITE;
 
-        v.setBackgroundColor(bgColor);
+//        v.setBackgroundColor(bgColor);
         imgArrow.setImageResource(ic_arrow);
         return v;
     }

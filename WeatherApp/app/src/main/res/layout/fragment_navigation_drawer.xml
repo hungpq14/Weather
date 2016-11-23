@@ -27,36 +27,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="30dp"
         android:orientation="vertical">
-
-
-        <LinearLayout
-            android:id="@+id/navigation_item_weather"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:background="#00aaff">
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="10dp"
-                android:layout_weight="1"
-                android:text="Weather"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
-
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_gravity="center_vertical|left"
-                android:layout_marginRight="10dp"
-                app:srcCompat="@drawable/ic_bell"
-                android:layout_height="20dp" />
-
-        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/navigation_item_location"

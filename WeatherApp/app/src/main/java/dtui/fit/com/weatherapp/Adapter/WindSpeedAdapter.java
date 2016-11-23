@@ -11,20 +11,21 @@ import java.util.List;
 
 import dtui.fit.com.weatherapp.Object.HourlyForecast;
 import dtui.fit.com.weatherapp.R;
+import me.itangqi.waveloadingview.WaveLoadingView;
 
 /**
- * Created by phamh_000 on 17/11/2016.
+ * Created by phamh_000 on 23/11/2016.
  */
-public class TemperatureAdapter extends RecyclerView.Adapter<TemperatureAdapter.MyViewHolder> {
+public class WindSpeedAdapter extends RecyclerView.Adapter<WindSpeedAdapter.MyViewHolder> {
     private List<HourlyForecast> hourlyForecastList;
 
-    public TemperatureAdapter(List<HourlyForecast> hourlyForecastList) {
+    public WindSpeedAdapter(List<HourlyForecast> hourlyForecastList) {
         this.hourlyForecastList = hourlyForecastList;
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_temperature, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_wind_speed, parent, false);
         return new MyViewHolder(itemView);
     }
 
@@ -51,7 +52,7 @@ public class TemperatureAdapter extends RecyclerView.Adapter<TemperatureAdapter.
         }
 
         public void bind(HourlyForecast hourlyForecast){
-            imgIcon.setImageResource(R.mipmap.wsymbol_thundery_showers_ln);
+            imgIcon.setImageResource(R.mipmap.ic_param_wind_chill);
             txtTime.setText(hourlyForecast.getTime());
             txtTemperature.setText(hourlyForecast.getTemperature());
         }

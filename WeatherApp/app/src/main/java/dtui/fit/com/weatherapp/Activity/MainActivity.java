@@ -4,9 +4,12 @@ import android.app.NotificationManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Handler;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -14,14 +17,20 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.animation.LinearInterpolator;
 import android.widget.Toast;
 
+import com.flaviofaria.kenburnsview.KenBurnsView;
+import com.flaviofaria.kenburnsview.RandomTransitionGenerator;
+
+import java.util.BitSet;
 import java.util.Locale;
 
 import dtui.fit.com.weatherapp.Base.BaseFontActivity;
 import dtui.fit.com.weatherapp.Fragment.MainFragment;
 import dtui.fit.com.weatherapp.Fragment.NavigationFragment;
 import dtui.fit.com.weatherapp.R;
+import dtui.fit.com.weatherapp.Utils.Utils;
 
 public class MainActivity extends BaseFontActivity implements NavigationFragment.NavigationDrawerCallbacks {
 
@@ -88,6 +97,14 @@ public class MainActivity extends BaseFontActivity implements NavigationFragment
         drawerLayout.setDrawerListener(toggle);
         toggle.syncState();
 
+        KenBurnsView kenBurnsView = (KenBurnsView) findViewById(R.id.kbv_img_bg);
+        RandomTransitionGenerator generator = new RandomTransitionGenerator(20000, new LinearInterpolator());
+        kenBurnsView.setTransitionGenerator(generator);
+
+        Bitmap bitmap = ((BitmapDrawable)kenBurnsView.getDrawable()).getBitmap();
+        Bitmap bluredBitmap = Utils.blur(getApplicationContext(), bitmap);
+        kenBurnsView.setImageBitmap(bluredBitmap);
+        kenBurnsView.setFitsSystemWindows(true);
     }
 
     @Override

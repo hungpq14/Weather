@@ -1,21 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp">
 
     <TextView
         android:id="@+id/txt_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="NOW"
-        android:textSize="14sp"/>
+        android:layout_centerHorizontal="true"
+        android:textSize="13sp"
+        android:textColor="@color/white"/>
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:id="@+id/layout_precipitation_wave_view"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="3dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/txt_time"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/precipitation_item_background">
 
-
+        <me.itangqi.waveloadingview.WaveLoadingView
+            android:id="@+id/wave_loading_view"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_centerInParent="true"
+            app:wlv_borderColor="#00000000"
+            app:wlv_borderWidth="0dp"
+            app:wlv_progressValue="50"
+            app:wlv_shapeType="rectangle"
+            app:wlv_round_rectangle="true"
+            app:wlv_round_rectangle_x_and_y="14"
+            app:wlv_waveAmplitude="40"
+            app:wlv_waveColor="@color/colorPrimary"/>
 
     </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txt_percent_precipitation"
+        android:layout_below="@+id/layout_precipitation_wave_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="30%"
+        android:layout_centerHorizontal="true"
+        android:textSize="16sp"
+        android:textColor="@color/white"/>
 
 </RelativeLayout>
