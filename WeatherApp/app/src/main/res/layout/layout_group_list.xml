@@ -19,7 +19,7 @@
         android:padding="10px"
         android:text="Today"
         android:textSize="15sp"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white_adjust"/>
 
     <ImageView
         android:id="@+id/weather"
@@ -40,7 +40,7 @@
         android:padding="10px"
         android:text="32℃/20℃"
         android:textSize="15sp"
-        android:textColor="@color/white"
+        android:textColor="@color/white_adjust"
         android:layout_marginRight="5dp"/>
 
     <View

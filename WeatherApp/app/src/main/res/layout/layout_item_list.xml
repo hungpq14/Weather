@@ -21,7 +21,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:textColor="@color/white"
+                android:textColor="@color/white_adjust"
                 android:text="RealFeel:"
                 android:id="@+id/realfeel"
                 android:layout_alignParentTop="true" />
@@ -29,7 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="13sp"
-                android:textColor="@color/white"
+                android:textColor="@color/white_adjust"
                 android:text="32℃"
                 android:layout_toRightOf="@+id/realfeel"
                 android:layout_marginLeft="10dp"/>
@@ -43,7 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:textColor="@color/white"
+                android:textColor="@color/white_adjust"
                 android:text="Winds:"
                 android:id="@+id/wind"
                 android:layout_alignParentTop="true" />
@@ -51,7 +51,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="13sp"
-                android:textColor="@color/white"
+                android:textColor="@color/white_adjust"
                 android:text="7 km/h SE"
                 android:layout_toRightOf="@+id/wind"
                 android:layout_marginLeft="10dp"/>
@@ -65,7 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:textColor="@color/white"
+                android:textColor="@color/white_adjust"
                 android:text="Gusts:"
                 android:id="@+id/gust"
                 android:layout_alignParentTop="true" />
@@ -73,7 +73,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="13sp"
-                android:textColor="@color/white"
+                android:textColor="@color/white_adjust"
                 android:text="13 km/h"
                 android:layout_toRightOf="@+id/gust"
                 android:layout_marginLeft="10dp"/>
@@ -88,7 +88,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:textColor="@color/white"
+                android:textColor="@color/white_adjust"
                 android:text="Cloud Cover:"
                 android:id="@+id/cloud"
                 android:layout_alignParentTop="true" />
@@ -96,7 +96,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="13sp"
-                android:textColor="@color/white"
+                android:textColor="@color/white_adjust"
                 android:text="46%"
                 android:layout_toRightOf="@+id/cloud"
                 android:layout_marginLeft="10dp"/>
@@ -111,7 +111,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:textColor="@color/white"
+                android:textColor="@color/white_adjust"
                 android:text="UV index:"
                 android:id="@+id/uv"
                 android:layout_alignParentTop="true" />
@@ -119,7 +119,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="13sp"
-                android:textColor="@color/white"
+                android:textColor="@color/white_adjust"
                 android:text="1"
                 android:layout_toRightOf="@+id/uv"
                 android:layout_marginLeft="10dp"/>
@@ -142,7 +142,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:textColor="@color/white"
+                android:textColor="@color/white_adjust"
                 android:text="Rain:"
                 android:id="@+id/rain"
                 android:layout_alignParentTop="true" />
@@ -150,7 +150,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="13sp"
-                android:textColor="@color/white"
+                android:textColor="@color/white_adjust"
                 android:text="0 mm"
                 android:layout_toRightOf="@+id/rain"
                 android:layout_marginLeft="10dp"/>
@@ -164,7 +164,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:textColor="@color/white"
+                android:textColor="@color/white_adjust"
                 android:text="Snow:"
                 android:id="@+id/snow"
                 android:layout_alignParentTop="true" />
@@ -172,7 +172,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="13sp"
-                android:textColor="@color/white"
+                android:textColor="@color/white_adjust"
                 android:text="0 cm"
                 android:layout_toRightOf="@+id/snow"
                 android:layout_marginLeft="10dp"/>
@@ -186,7 +186,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:textColor="@color/white"
+                android:textColor="@color/white_adjust"
                 android:text="Ice"
                 android:id="@+id/ice"
                 android:layout_alignParentTop="true" />
@@ -194,7 +194,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="13sp"
-                android:textColor="@color/white"
+                android:textColor="@color/white_adjust"
                 android:text="0 mm"
                 android:layout_toRightOf="@+id/ice"
                 android:layout_marginLeft="10dp"/>
@@ -209,7 +209,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:textColor="@color/white"
+                android:textColor="@color/white_adjust"
                 android:text="Visibility:"
                 android:id="@+id/visibility"
                 android:layout_alignParentTop="true" />
@@ -217,7 +217,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="13sp"
-                android:textColor="@color/white"
+                android:textColor="@color/white_adjust"
                 android:text="15 km"
                 android:layout_toRightOf="@+id/visibility"
                 android:layout_marginLeft="10dp"/>
@@ -232,7 +232,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:textColor="@color/white"
+                android:textColor="@color/white_adjust"
                 android:text="Ceiling:"
                 android:id="@+id/ceiling"
                 android:layout_alignParentTop="true" />
@@ -240,7 +240,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="13sp"
-                android:textColor="@color/white"
+                android:textColor="@color/white_adjust"
                 android:text="9144 m"
                 android:layout_toRightOf="@+id/ceiling"
                 android:layout_marginLeft="10dp"/>

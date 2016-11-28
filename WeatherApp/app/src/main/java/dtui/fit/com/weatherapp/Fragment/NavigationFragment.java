@@ -7,11 +7,14 @@ import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.ToggleButton;
 
 import dtui.fit.com.weatherapp.R;
@@ -22,13 +25,24 @@ import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
  */
 public class NavigationFragment extends Fragment {
     private NavigationDrawerCallbacks mCallbacks;
-    LinearLayout itemSetting, itemMap, itemLocation;
+    LinearLayout itemSetting, itemMap, itemLocation, itemSignIn, itemNews;
 
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
+
+        int navigationBarHeight = 0;
+        int resourceId = getResources().getIdentifier("navigation_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            navigationBarHeight = getResources().getDimensionPixelSize(resourceId);
+        }
+        Log.d("Main", "Navigation bar height: " + navigationBarHeight);
+        FrameLayout.LayoutParams lp = (FrameLayout.LayoutParams) view.findViewById(R.id.layout_version).getLayoutParams();
+        lp.setMargins(0, 0, 0, navigationBarHeight);
+        view.findViewById(R.id.layout_version).setLayoutParams(lp);
+
 
         return view;
     }
@@ -55,10 +69,14 @@ public class NavigationFragment extends Fragment {
         itemSetting = (LinearLayout) getView().findViewById(R.id.navigation_item_setting);
         itemMap = (LinearLayout) getView().findViewById(R.id.navigation_item_map);
         itemLocation = (LinearLayout) getView().findViewById(R.id.navigation_item_location);
+        itemSignIn = (LinearLayout) getView().findViewById(R.id.navigation_item_sign_in);
+        itemNews = (LinearLayout) getView().findViewById(R.id.navigation_item_news);
 
         itemSetting.setOnClickListener(navClickItem);
         itemMap.setOnClickListener(navClickItem);
         itemLocation.setOnClickListener(navClickItem);
+        itemNews.setOnClickListener(navClickItem);
+        itemSignIn.setOnClickListener(navClickItem);
 
     }
 
@@ -66,21 +84,27 @@ public class NavigationFragment extends Fragment {
 
         @Override
         public void onClick(View v) {
-            if (v.equals(itemSetting)) {
-                selectItem(0);
-            } else if (v.equals(itemMap)) {
-                selectItem(1);
-            } else if (v.equals(itemLocation)){
+            if (v.equals(itemMap)) {
+                selectItem(2);
+            } else if (v.equals(itemSetting)) {
+                selectItem(3);
+            } else if (v.equals(itemLocation)) {
                 View view = getView().findViewById(R.id.navigation_item_position);
+                View view2 = getView().findViewById(R.id.navigation_item_position_2);
                 ImageView img = (ImageView) getView().findViewById(R.id.img_expand);
-                if (view.getVisibility() == View.GONE){
-
+                if (view.getVisibility() == View.GONE) {
+                    view2.setVisibility(View.VISIBLE);
                     view.setVisibility(View.VISIBLE);
                     img.setImageResource(R.drawable.ic_arrow_down);
                 } else {
+                    view2.setVisibility(View.GONE);
                     view.setVisibility(View.GONE);
                     img.setImageResource(R.drawable.ic_arrow_up);
                 }
+            } else if (v.equals(itemSignIn)) {
+                selectItem(0);
+            } else if (v.equals(itemNews)) {
+                selectItem(4);
             }
         }
     };

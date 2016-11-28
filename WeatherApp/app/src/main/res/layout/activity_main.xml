@@ -3,36 +3,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context=".Activity.MainActivity">
 
     <android.support.v4.widget.DrawerLayout
         android:id="@+id/drawerLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true">
+        android:layout_height="match_parent">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fitsSystemWindows="true">
+            android:layout_height="match_parent">
 
             <com.flaviofaria.kenburnsview.KenBurnsView
                 android:id="@+id/kbv_img_bg"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@mipmap/ha_noi_1" />
+                android:layout_marginTop="-40dp"
+                android:src="@mipmap/ha_noi_2" />
 
-            <include
-                android:id="@+id/toolbar"
-                layout="@layout/view_tool_bar" />
-
-            <FrameLayout
-                android:id="@+id/container"
+            <com.reginald.swiperefresh.CustomSwipeRefreshLayout xmlns:swiperefresh="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/swipe_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@+id/toolbar" />
+                swiperefresh:enable_top_progress_bar="true"
+                swiperefresh:keep_refresh_head="false"
+                swiperefresh:refresh_mode="swipe_mode"
+                swiperefresh:return_to_header_duration="500"
+                swiperefresh:return_to_top_duration="500"
+                swiperefresh:time_out_refresh_complete="2000"
+                swiperefresh:time_out_return_to_top="1000"
+                swiperefresh:top_progress_bar_color_1="#03A9F4"
+                swiperefresh:top_progress_bar_color_2="#4FC3F7"
+                swiperefresh:top_progress_bar_color_3="#2196F3"
+                swiperefresh:top_progress_bar_color_4="#4DB6AC">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <include
+                        android:id="@+id/toolbar"
+                        layout="@layout/view_tool_bar" />
+
+                    <FrameLayout
+                        android:id="@+id/container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/toolbar" />
+
+                </LinearLayout>
+
+            </com.reginald.swiperefresh.CustomSwipeRefreshLayout>
 
         </RelativeLayout>
 

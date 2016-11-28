@@ -5,7 +5,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
+import android.os.AsyncTask;
 import android.os.Handler;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
@@ -17,11 +20,16 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import android.view.Window;
 import android.view.animation.LinearInterpolator;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.flaviofaria.kenburnsview.KenBurnsView;
 import com.flaviofaria.kenburnsview.RandomTransitionGenerator;
+import com.reginald.swiperefresh.CustomSwipeRefreshLayout;
 
 import java.util.BitSet;
 import java.util.Locale;
@@ -97,26 +105,77 @@ public class MainActivity extends BaseFontActivity implements NavigationFragment
         drawerLayout.setDrawerListener(toggle);
         toggle.syncState();
 
-        KenBurnsView kenBurnsView = (KenBurnsView) findViewById(R.id.kbv_img_bg);
-        RandomTransitionGenerator generator = new RandomTransitionGenerator(20000, new LinearInterpolator());
+        int statusBarHeight = 0;
+        int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            statusBarHeight = getResources().getDimensionPixelSize(resourceId);
+        }
+        Log.d("Main", "statusBarHeight: " + statusBarHeight);
+        RelativeLayout.LayoutParams lp;
+//        lp = (RelativeLayout.LayoutParams) toolbar.getLayoutParams();
+//        lp.setMargins(0, statusBarHeight, 0, 0);
+//        toolbar.setLayoutParams(lp);
+
+        int navigationBarHeight = 0;
+        resourceId = getResources().getIdentifier("navigation_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            navigationBarHeight = getResources().getDimensionPixelSize(resourceId);
+        }
+        Log.d("Main", "Navigation bar height: " + navigationBarHeight);
+//        lp = (RelativeLayout.LayoutParams) findViewById(R.id.container).getLayoutParams();
+//        lp.setMargins(0, 0, 0, navigationBarHeight);
+//        findViewById(R.id.container).setLayoutParams(lp);
+
+        lp = (RelativeLayout.LayoutParams) findViewById(R.id.swipe_layout).getLayoutParams();
+        lp.setMargins(0, statusBarHeight, 0, navigationBarHeight);
+        findViewById(R.id.swipe_layout).setLayoutParams(lp);
+
+        final KenBurnsView kenBurnsView = (KenBurnsView) findViewById(R.id.kbv_img_bg);
+        RandomTransitionGenerator generator = new RandomTransitionGenerator(24000, new LinearInterpolator());
         kenBurnsView.setTransitionGenerator(generator);
 
-        Bitmap bitmap = ((BitmapDrawable)kenBurnsView.getDrawable()).getBitmap();
+        Bitmap bitmap = ((BitmapDrawable) kenBurnsView.getDrawable()).getBitmap();
         Bitmap bluredBitmap = Utils.blur(getApplicationContext(), bitmap);
         kenBurnsView.setImageBitmap(bluredBitmap);
         kenBurnsView.setFitsSystemWindows(true);
+
+        final CustomSwipeRefreshLayout customSwipeRefreshLayout = (CustomSwipeRefreshLayout) findViewById(R.id.swipe_layout);
+        customSwipeRefreshLayout.setOnRefreshListener(new CustomSwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.ha_noi_3);
+                        Bitmap bluredBitmap = Utils.blur(getApplicationContext(), bitmap);
+                        kenBurnsView.setImageBitmap(bluredBitmap);
+                        customSwipeRefreshLayout.refreshComplete();
+                    }
+                }, 2000);
+            }
+        });
     }
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         switch (position) {
             case (0): {
+                startActivity(new Intent(this, SignInActivity.class));
+                drawerLayout.closeDrawer(GravityCompat.START);
+                break;
+            }
+            case (3): {
+                startActivity(new Intent(this, SettingActivity.class));
+                drawerLayout.closeDrawer(GravityCompat.START);
+                break;
+            }
+            case (2): {
                 startActivity(new Intent(this, MapActivity.class));
                 drawerLayout.closeDrawer(GravityCompat.START);
                 break;
             }
-            case (1): {
-                startActivity(new Intent(this, SettingActivity.class));
+            case (4): {
+                startActivity(new Intent(this, WeatherNewsActivity.class));
                 drawerLayout.closeDrawer(GravityCompat.START);
                 break;
             }

@@ -8,6 +8,8 @@
     <color name="black">#000000</color>
     <color name="grey">#eeeeee</color>
 
+    <color name="white_adjust">#F5F5F5</color>
+
     <color name="light_white">#60ffffff</color>
 
     <color name="navigation_selector_background">#30ffffff</color>

@@ -1,13 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
+    android:orientation="vertical"
     tools:context="dtui.fit.com.weatherapp.Activity.SettingActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/bg_weather_rain" />
 
     <include
         android:id="@+id/toolbar"
         layout="@layout/view_tool_bar" />
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/setting_unit_layout" />
+
+            <include layout="@layout/setting_general" />
+
+            <include layout="@layout/setting_notification" />
+
+            <include layout="@layout/setting_others" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
 
 </RelativeLayout>
