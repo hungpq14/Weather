@@ -43,7 +43,7 @@
                 android:layout_height="20dp"
                 android:layout_gravity="center_vertical|left"
                 android:layout_marginLeft="10dp"
-                app:srcCompat="@drawable/ic_setting" />
+                app:srcCompat="@drawable/ic_user" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -204,7 +204,7 @@
                 android:layout_height="20dp"
                 android:layout_gravity="center_vertical|left"
                 android:layout_marginLeft="10dp"
-                app:srcCompat="@drawable/ic_setting" />
+                app:srcCompat="@drawable/ic_news" />
 
             <TextView
                 android:layout_width="wrap_content"

@@ -15,7 +15,7 @@ public class WeatherNewsActivity extends BaseToolbarActivity {
 
     @Override
     public String getToolbarText() {
-        return "Weather News";
+        return "Weather ic_news";
     }
 
     @Override
