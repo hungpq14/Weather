@@ -14,11 +14,11 @@
 
     </style>
 
-    <style name="AppThemeSetting" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppThemeNormal" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/grey</item>
         <item name="colorPrimaryDark">@color/black</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/colorPrimary</item>
     </style>
 
     <style name="SCBSwitch" parent="Theme.AppCompat.Light">
@@ -32,6 +32,12 @@
         <!-- inactive track color (30% transparency) -->
         <item name="android:colorForeground">#42221f1f
         </item>
+    </style>
+
+
+    <style name="TextLabel" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorControlActivated">#FFCC00</item>
     </style>
 
 

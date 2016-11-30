@@ -6,8 +6,23 @@
     android:fitsSystemWindows="true"
     tools:context="dtui.fit.com.weatherapp.Activity.WeatherNewsActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@mipmap/bg_weather_rain_night"
+        android:scaleType="centerCrop"/>
+
     <include
         android:id="@+id/toolbar"
         layout="@layout/view_tool_bar" />
+
+    <RelativeLayout
+        android:id="@+id/weather_news"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:paddingTop="3dp"/>
 
 </RelativeLayout>

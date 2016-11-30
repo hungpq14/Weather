@@ -43,7 +43,7 @@
                 android:layout_height="20dp"
                 android:layout_gravity="center_vertical|left"
                 android:layout_marginLeft="10dp"
-                app:srcCompat="@drawable/ic_user" />
+                android:src="@drawable/ic_user" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -69,7 +69,7 @@
                 android:layout_height="20dp"
                 android:layout_gravity="center_vertical|left"
                 android:layout_marginLeft="10dp"
-                app:srcCompat="@drawable/ic_marker" />
+                android:src="@drawable/ic_marker" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -82,12 +82,21 @@
                 android:textSize="15sp" />
 
             <ImageView
-                android:id="@+id/img_expand"
-                android:layout_width="12dp"
-                android:layout_height="12dp"
+                android:id="@+id/add_loc"
+                android:padding="4dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center_vertical|left"
                 android:layout_marginRight="14dp"
-                app:srcCompat="@drawable/ic_arrow_up" />
+                android:src="@drawable/plus_black" />
+
+            <ImageView
+                android:id="@+id/img_expand"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center_vertical|left"
+                android:layout_marginRight="14dp"
+                android:src="@drawable/ic_arrow_up" />
         </LinearLayout>
 
         <LinearLayout
@@ -99,22 +108,21 @@
 
 
             <TextView
-                fontPath="fonts/UTM AvoBold.ttf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="40dp"
                 android:layout_weight="1"
                 android:text="Hanoi"
-                android:textColor="#444444"
-                android:textSize="15sp" />
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center_vertical|left"
                 android:layout_marginRight="10dp"
-                app:srcCompat="@drawable/ic_position" />
+                android:src="@drawable/ic_position" />
         </LinearLayout>
 
         <LinearLayout
@@ -139,8 +147,7 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center_vertical|left"
-                android:layout_marginRight="10dp"
-                />
+                android:layout_marginRight="10dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -154,7 +161,7 @@
                 android:layout_height="20dp"
                 android:layout_gravity="center_vertical|left"
                 android:layout_marginLeft="10dp"
-                app:srcCompat="@drawable/ic_map" />
+                android:src="@drawable/ic_map" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -179,7 +186,7 @@
                 android:layout_height="20dp"
                 android:layout_gravity="center_vertical|left"
                 android:layout_marginLeft="10dp"
-                app:srcCompat="@drawable/ic_setting" />
+                android:src="@drawable/ic_setting" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -204,7 +211,7 @@
                 android:layout_height="20dp"
                 android:layout_gravity="center_vertical|left"
                 android:layout_marginLeft="10dp"
-                app:srcCompat="@drawable/ic_news" />
+                android:src="@drawable/ic_news" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -229,7 +236,7 @@
                 android:layout_height="20dp"
                 android:layout_gravity="center_vertical|left"
                 android:layout_marginLeft="10dp"
-                app:srcCompat="@drawable/ic_facebook" />
+                android:src="@drawable/ic_facebook" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -254,7 +261,7 @@
                 android:layout_height="20dp"
                 android:layout_gravity="center_vertical|left"
                 android:layout_marginLeft="10dp"
-                app:srcCompat="@drawable/ic_share" />
+                android:src="@drawable/ic_share" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -279,7 +286,7 @@
                 android:layout_height="20dp"
                 android:layout_gravity="center_vertical|left"
                 android:layout_marginLeft="10dp"
-                app:srcCompat="@drawable/ic_star" />
+                android:src="@drawable/ic_star" />
 
             <TextView
                 android:layout_width="wrap_content"

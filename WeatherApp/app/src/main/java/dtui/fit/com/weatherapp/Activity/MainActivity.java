@@ -25,6 +25,7 @@ import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.animation.LinearInterpolator;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.flaviofaria.kenburnsview.KenBurnsView;
@@ -78,33 +79,7 @@ public class MainActivity extends BaseFontActivity implements NavigationFragment
         }
     }
 
-    public void initDrawer() {
-        if (toolbar != null) {
-            toolbar.setTitle("");
-            setSupportActionBar(toolbar);
-            toolbar.setNavigationIcon(getResources().getDrawable(R.mipmap.ic_menu));
-        }
-
-        //set action cho show up negative layout
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.opendrawer, R.string.closedrawer) {
-            @Override
-            public boolean onOptionsItemSelected(MenuItem item) {
-                if (item != null && item.getItemId() == android.R.id.home) {
-                    int drawerLockMode = drawerLayout.getDrawerLockMode(GravityCompat.START);
-                    if (drawerLayout.isDrawerVisible(GravityCompat.START)
-                            && (drawerLockMode != DrawerLayout.LOCK_MODE_LOCKED_OPEN)) {
-
-                    } else if (drawerLockMode != DrawerLayout.LOCK_MODE_LOCKED_CLOSED) {
-                        drawerLayout.openDrawer(GravityCompat.START);
-                    }
-                    return true;
-                }
-                return false;
-            }
-        };
-        drawerLayout.setDrawerListener(toggle);
-        toggle.syncState();
-
+    public void initDraw() {
         int statusBarHeight = 0;
         int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
         if (resourceId > 0) {
@@ -140,6 +115,7 @@ public class MainActivity extends BaseFontActivity implements NavigationFragment
         kenBurnsView.setFitsSystemWindows(true);
 
         final CustomSwipeRefreshLayout customSwipeRefreshLayout = (CustomSwipeRefreshLayout) findViewById(R.id.swipe_layout);
+
         customSwipeRefreshLayout.setOnRefreshListener(new CustomSwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -149,11 +125,49 @@ public class MainActivity extends BaseFontActivity implements NavigationFragment
                         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.ha_noi_3);
                         Bitmap bluredBitmap = Utils.blur(getApplicationContext(), bitmap);
                         kenBurnsView.setImageBitmap(bluredBitmap);
+
+                        TextView mMainTextView = (TextView) findViewById(com.reginald.swiperefresh.R.id.default_header_textview);
+                        TextView mSubTextView = (TextView) findViewById(com.reginald.swiperefresh.R.id.default_header_time);
+
+                        mMainTextView.setTextColor(getResources().getColor(R.color.white_adjust));
+                        mSubTextView.setTextColor(getResources().getColor(R.color.white_adjust));
+
                         customSwipeRefreshLayout.refreshComplete();
                     }
                 }, 2000);
             }
         });
+
+    }
+
+    public void initDrawer() {
+        if (toolbar != null) {
+            toolbar.setTitle("");
+            setSupportActionBar(toolbar);
+            toolbar.setNavigationIcon(getResources().getDrawable(R.mipmap.ic_menu));
+        }
+
+        //set action cho show up negative layout
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.opendrawer, R.string.closedrawer) {
+            @Override
+            public boolean onOptionsItemSelected(MenuItem item) {
+                if (item != null && item.getItemId() == android.R.id.home) {
+                    int drawerLockMode = drawerLayout.getDrawerLockMode(GravityCompat.START);
+                    if (drawerLayout.isDrawerVisible(GravityCompat.START)
+                            && (drawerLockMode != DrawerLayout.LOCK_MODE_LOCKED_OPEN)) {
+
+                    } else if (drawerLockMode != DrawerLayout.LOCK_MODE_LOCKED_CLOSED) {
+                        drawerLayout.openDrawer(GravityCompat.START);
+                    }
+                    return true;
+                }
+                return false;
+            }
+        };
+        drawerLayout.setDrawerListener(toggle);
+        toggle.syncState();
+
+        initDraw();
     }
 
     @Override
@@ -176,6 +190,11 @@ public class MainActivity extends BaseFontActivity implements NavigationFragment
             }
             case (4): {
                 startActivity(new Intent(this, WeatherNewsActivity.class));
+                drawerLayout.closeDrawer(GravityCompat.START);
+                break;
+            }
+            case (99): {
+                startActivity(new Intent(this, AddLocationActivity.class));
                 drawerLayout.closeDrawer(GravityCompat.START);
                 break;
             }

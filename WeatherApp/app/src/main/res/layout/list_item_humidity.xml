@@ -15,7 +15,7 @@
         android:textSize="13sp"
         android:textColor="@color/white"/>
 
-    <dtui.fit.com.weatherapp.Object.DonutProgress
+    <dtui.fit.com.weatherapp.Object.View.DonutProgress
         android:id="@+id/progress_humidity"
         android:layout_width="40dp"
         android:layout_height="40dp"

@@ -72,6 +72,13 @@ public class NavigationFragment extends Fragment {
         itemSignIn = (LinearLayout) getView().findViewById(R.id.navigation_item_sign_in);
         itemNews = (LinearLayout) getView().findViewById(R.id.navigation_item_news);
 
+        ((ImageView) getView().findViewById(R.id.add_loc)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectItem(99);
+            }
+        });
+
         itemSetting.setOnClickListener(navClickItem);
         itemMap.setOnClickListener(navClickItem);
         itemLocation.setOnClickListener(navClickItem);

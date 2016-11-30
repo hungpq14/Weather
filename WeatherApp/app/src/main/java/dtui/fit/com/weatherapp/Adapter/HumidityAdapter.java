@@ -1,7 +1,6 @@
 package dtui.fit.com.weatherapp.Adapter;
 
 import android.app.Activity;
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,10 +11,9 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import dtui.fit.com.weatherapp.Object.DonutProgress;
+import dtui.fit.com.weatherapp.Object.View.DonutProgress;
 import dtui.fit.com.weatherapp.Object.HourlyForecast;
 import dtui.fit.com.weatherapp.R;
-import dtui.fit.com.weatherapp.Utils.Utils;
 
 /**
  * Created by phamh_000 on 23/11/2016.

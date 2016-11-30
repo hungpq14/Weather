@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import dtui.fit.com.weatherapp.Base.BaseToolbarActivity;
+import dtui.fit.com.weatherapp.Fragment.ListNotification;
 import dtui.fit.com.weatherapp.R;
 
 public class WeatherNewsActivity extends BaseToolbarActivity {
@@ -21,6 +22,10 @@ public class WeatherNewsActivity extends BaseToolbarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_weather_news);
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.weather_news, new ListNotification())
+                    .commit();
+        }
     }
 }

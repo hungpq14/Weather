@@ -1,9 +1,11 @@
 package dtui.fit.com.weatherapp.Activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
 import android.widget.RelativeLayout;
 
 import dtui.fit.com.weatherapp.Base.BaseToolbarActivity;
@@ -48,5 +50,12 @@ public class SettingActivity extends BaseToolbarActivity {
         lp.setMargins(0, 0, 0, navigationBarHeight);
         findViewById(R.id.scroll_view).setLayoutParams(lp);
 
+        findViewById(R.id.layout_about).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SettingActivity.this, AboutActivity.class));
+                finish();
+            }
+        });
     }
 }

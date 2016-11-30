@@ -1,4 +1,4 @@
-package dtui.fit.com.weatherapp.Object;
+package dtui.fit.com.weatherapp.Object.View;
 
 import android.content.Context;
 import android.content.res.TypedArray;

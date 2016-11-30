@@ -1,43 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-
     <WebView
+        android:id="@+id/mapview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/mapview"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Spinner
-        android:layout_width="100dip"
-        android:background="#80000000"
-        android:layout_height="wrap_content"
-        android:id="@+id/spinner"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:paddingLeft="10dip"
-        android:paddingRight="10dip"
-        android:paddingTop="10dip"
-        android:paddingBottom="10dip"/>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#30000000"
+        app:elevation="0dp"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <TextView
+            android:id="@+id/txt_toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Weather"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <!--<Spinner-->
+    <!--android:id="@+id/spinner"-->
+    <!--android:layout_width="100dip"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_alignParentEnd="true"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:background="#80000000"-->
+    <!--android:paddingBottom="10dip"-->
+    <!--android:paddingLeft="10dip"-->
+    <!--android:paddingRight="10dip"-->
+    <!--android:paddingTop="10dip" />-->
+
+    <dtui.fit.com.weatherapp.Object.View.FloatingActionMenu
+        android:id="@+id/fab_menu_circle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="16dp"
+        android:paddingEnd="16dp"
+        android:paddingRight="16dp">
+
+        <!--First button as menu button-->
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_main_circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/temp"
+            fab:backgroundTint="@color/bg_temp"
+            fab:fabSize="normal" />
+
+        <!-- Other button as menu items-->
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_temp_circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="Temperature"
+            android:src="@drawable/temp"
+            fab:backgroundTint="@color/bg_temp"
+            fab:fabSize="auto" />
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_wind_circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="Wind"
+            android:src="@drawable/wind"
+            fab:backgroundTint="@color/bg_wind"
+            fab:fabSize="auto" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_rain_circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="Rain"
+            android:src="@drawable/rain"
+            fab:backgroundTint="@color/bg_rain"
+            fab:fabSize="auto" />
+
+    </dtui.fit.com.weatherapp.Object.View.FloatingActionMenu>
+
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:background="@drawable/info"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
+        android:layout_alignParentStart="true"
+        android:background="@drawable/info" />
 
 </RelativeLayout>

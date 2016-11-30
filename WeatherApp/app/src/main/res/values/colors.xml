@@ -12,6 +12,11 @@
 
     <color name="light_white">#60ffffff</color>
 
-    <color name="navigation_selector_background">#30ffffff</color>
+    <color name="navigation_selector_background">#80eeeeee</color>
     <color name="transparent">#00000000</color>
+
+    <color name="bg_wind">#009688</color>
+    <color name="bg_rain">#283593</color>
+    <color name="bg_temp">#FFC107</color>
+
 </resources>

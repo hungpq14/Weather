@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="dtui.fit.com.weatherapp">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,10 +19,41 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.MapActivity" />
+        <activity
+            android:name=".Activity.MapActivity"
+            android:theme="@style/AppThemeNormal" />
         <activity android:name=".Activity.SettingActivity" />
-        <activity android:name=".Activity.SignInActivity" />
-        <activity android:name=".Activity.WeatherNewsActivity"></activity>
+        <activity
+            android:name=".Activity.SignInActivity"
+            android:theme="@style/AppThemeNormal"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Activity.WeatherNewsActivity"
+            android:theme="@style/AppThemeNormal" />
+        <activity
+            android:name=".Activity.WebViewActivity"
+            android:theme="@style/AppThemeNormal" />
+        <activity
+            android:name=".Activity.RegisterActivity"
+            android:theme="@style/AppThemeNormal"
+            android:windowSoftInputMode="stateHidden" />
+
+        <service android:name=".Service.MyService" />
+
+        <receiver android:name=".Receiver.Receiver" />
+
+        <activity android:name=".Activity.AboutActivity" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAnPjtB0dokFHU_yyTVwRqXTE8UdZz-mWs" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity android:name=".Activity.AddLocationActivity"
+            android:windowSoftInputMode="stateHidden"
+            android:theme="@style/AppThemeNormal"></activity>
     </application>
 
 </manifest>
