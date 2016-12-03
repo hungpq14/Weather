@@ -54,7 +54,17 @@ public class SettingActivity extends BaseToolbarActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SettingActivity.this, AboutActivity.class));
-                finish();
+            }
+        });
+
+        setEvent();
+    }
+
+    private void setEvent() {
+        findViewById(R.id.layout_setting_smart_noti).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SettingActivity.this, SettingDetailActivity.class));
             }
         });
     }

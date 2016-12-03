@@ -51,9 +51,11 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity android:name=".Activity.AddLocationActivity"
-            android:windowSoftInputMode="stateHidden"
-            android:theme="@style/AppThemeNormal"></activity>
+        <activity
+            android:name=".Activity.AddLocationActivity"
+            android:theme="@style/AppThemeNormal"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".Activity.SettingDetailActivity"></activity>
     </application>
 
 </manifest>

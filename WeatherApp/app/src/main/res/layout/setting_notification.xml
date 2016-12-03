@@ -69,6 +69,7 @@
         </RelativeLayout>
 
         <LinearLayout
+            android:id="@+id/layout_setting_smart_noti"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/drawer_selector_item"
@@ -80,7 +81,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Smart Alert"
+                android:text="Smart Notification"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
 
@@ -88,7 +89,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:text="Alert when there is special weather tomorrow" />
+                android:text="Noti when there is special weather tomorrow" />
 
             <View
                 android:layout_width="match_parent"
