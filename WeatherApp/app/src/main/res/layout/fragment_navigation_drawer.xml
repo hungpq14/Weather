@@ -201,6 +201,32 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/navigation_item_weather_social"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@drawable/drawer_selector_item">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical|left"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/webhook" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="Weather Social"
+                android:textColor="#444444"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
             android:id="@+id/navigation_item_news"
             android:layout_width="match_parent"
             android:layout_height="55dp"

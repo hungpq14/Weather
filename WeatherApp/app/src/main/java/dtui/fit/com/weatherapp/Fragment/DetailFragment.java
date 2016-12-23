@@ -17,20 +17,14 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import dtui.fit.com.weatherapp.Adapter.HumidityAdapter;
 import dtui.fit.com.weatherapp.Adapter.PrecipitationAdapter;
 import dtui.fit.com.weatherapp.Adapter.TemperatureAdapter;
 import dtui.fit.com.weatherapp.Adapter.WindSpeedAdapter;
-import dtui.fit.com.weatherapp.Constant.ExampleHourlyForecast;
-import dtui.fit.com.weatherapp.Object.HourlyForecast;
+import dtui.fit.com.weatherapp.Constant.HourlyForecastSeeder;
 import dtui.fit.com.weatherapp.R;
-import jp.wasabeef.recyclerview.adapters.SlideInBottomAnimationAdapter;
 import jp.wasabeef.recyclerview.animators.FadeInUpAnimator;
 import jp.wasabeef.recyclerview.animators.LandingAnimator;
-import jp.wasabeef.recyclerview.animators.SlideInUpAnimator;
 
 /**
  * Created by phamh_000 on 13/11/2016.
@@ -60,11 +54,11 @@ public class DetailFragment extends Fragment {
         ((ImageView) view.findViewById(R.id.img_wind_pointer)).startAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.rotate_circle));
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
-        TemperatureAdapter adapter = new TemperatureAdapter(ExampleHourlyForecast.getSampleListTemperature());
+        TemperatureAdapter adapter = new TemperatureAdapter(HourlyForecastSeeder.getSampleListTemperature());
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
-        ExampleHourlyForecast.initListTemperature(adapter);
+        HourlyForecastSeeder.initListTemperature(adapter);
     }
 
     private void calculateCircleLayout() {
@@ -101,7 +95,7 @@ public class DetailFragment extends Fragment {
         @Override
         public void onClick(View v) {
             if (v == view.findViewById(R.id.layout_temperature)) {
-                final TemperatureAdapter adapter = new TemperatureAdapter(ExampleHourlyForecast.getSampleListTemperature());
+                final TemperatureAdapter adapter = new TemperatureAdapter(HourlyForecastSeeder.getSampleListTemperature());
                 recyclerView.setAdapter(adapter);
                 recyclerView.setItemAnimator(new FadeInUpAnimator());
                 recyclerView.getItemAnimator().setAddDuration(100);
@@ -109,24 +103,24 @@ public class DetailFragment extends Fragment {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        ExampleHourlyForecast.initListTemperature(adapter);
+                        HourlyForecastSeeder.initListTemperature(adapter);
                     }
                 }, 80);
 
                 rotateImgCurrentState(0);
             } else if (v == view.findViewById(R.id.layout_click_humidity)) {
 
-                HumidityAdapter adapter = new HumidityAdapter(ExampleHourlyForecast.getHumidityList(), getActivity());
+                HumidityAdapter adapter = new HumidityAdapter(HourlyForecastSeeder.getHumidityList(), getActivity());
                 recyclerView.setAdapter(adapter);
                 rotateImgCurrentState(270);
             } else if (v == view.findViewById(R.id.layout_click_precipitation)) {
 
-                PrecipitationAdapter adapter = new PrecipitationAdapter(ExampleHourlyForecast.getPrecipitationList());
+                PrecipitationAdapter adapter = new PrecipitationAdapter(HourlyForecastSeeder.getPrecipitationList());
                 recyclerView.setAdapter(adapter);
                 rotateImgCurrentState(90);
             } else if (v == view.findViewById(R.id.layout_bottom_main)) {
 
-                final WindSpeedAdapter adapter = new WindSpeedAdapter(ExampleHourlyForecast.getWindSpeedList());
+                final WindSpeedAdapter adapter = new WindSpeedAdapter(HourlyForecastSeeder.getWindSpeedList());
                 recyclerView.setAdapter(adapter);
                 recyclerView.setItemAnimator(new LandingAnimator());
                 recyclerView.getItemAnimator().setAddDuration(150);
@@ -134,7 +128,7 @@ public class DetailFragment extends Fragment {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        ExampleHourlyForecast.initListWindSpeed(adapter);
+                        HourlyForecastSeeder.initListWindSpeed(adapter);
                     }
                 },80);
 

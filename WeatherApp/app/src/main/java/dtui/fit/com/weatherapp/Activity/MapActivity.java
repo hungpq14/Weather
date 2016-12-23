@@ -80,7 +80,7 @@ public class MapActivity extends BaseToolbarActivity {
 
         final FloatingActionButton floatingActionButton = (FloatingActionButton) findViewById(R.id.fab_main_circle);
         FloatingActionMenu menu = (FloatingActionMenu) findViewById(R.id.fab_menu_circle);
-        menu.setMultipleOfFB(2.0f);
+        menu.setMultipleOfFB(2.4f);
         menu.setIsCircle(true);
 
         menu.setOnMenuItemClickListener(new FloatingActionMenu.OnMenuItemClickListener() {

@@ -1,14 +1,19 @@
 package dtui.fit.com.weatherapp.Activity;
 
+import android.app.NotificationManager;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.Switch;
+
+import java.util.ArrayList;
 
 import dtui.fit.com.weatherapp.Base.BaseToolbarActivity;
+import dtui.fit.com.weatherapp.Constant.SettingDetailSeeder;
+import dtui.fit.com.weatherapp.Notification.CurrentConditionNoti;
+import dtui.fit.com.weatherapp.Object.SettingDetail;
 import dtui.fit.com.weatherapp.R;
 
 public class SettingActivity extends BaseToolbarActivity {
@@ -61,11 +66,95 @@ public class SettingActivity extends BaseToolbarActivity {
     }
 
     private void setEvent() {
+        final Switch switchCurrent = (Switch) findViewById(R.id.switch_noti_current);
+        switchCurrent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (switchCurrent.isChecked()) {
+                    CurrentConditionNoti temp = new CurrentConditionNoti(getApplicationContext(), 2);
+
+                    NotificationManager notificationmanager = (NotificationManager) getApplicationContext().getSystemService(getApplicationContext().NOTIFICATION_SERVICE);
+                    notificationmanager.notify(2, temp.build());
+                } else {
+                    NotificationManager notificationmanager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+                    notificationmanager.cancel(2);
+                }
+            }
+        });
+
+        final Intent intent = new Intent(SettingActivity.this, SettingDetailActivity.class);
+
         findViewById(R.id.layout_setting_smart_noti).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SettingActivity.this, SettingDetailActivity.class));
+                ArrayList<SettingDetail> dataList = (ArrayList<SettingDetail>) SettingDetailSeeder.getSmartAlertListSetting();
+                intent.putExtra("title", "Smart Alert");
+                intent.putExtra("data", dataList);
+                startActivity(intent);
             }
         });
+
+        findViewById(R.id.layout_setting_data_source).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ArrayList<SettingDetail> dataList = (ArrayList<SettingDetail>) SettingDetailSeeder.getDataSourceListSetting();
+                intent.putExtra("title", "Data Source");
+                intent.putExtra("data", dataList);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.layout_setting_location).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ArrayList<SettingDetail> dataList = (ArrayList<SettingDetail>) SettingDetailSeeder.getLocationListSetting();
+                intent.putExtra("title", "Notification Location");
+                intent.putExtra("data", dataList);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.layout_setting_priority).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ArrayList<SettingDetail> dataList = (ArrayList<SettingDetail>) SettingDetailSeeder.getPriorityListSetting();
+                intent.putExtra("title", "Notification Priority");
+                intent.putExtra("data", dataList);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.layout_setting_update_interval).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ArrayList<SettingDetail> dataList = (ArrayList<SettingDetail>) SettingDetailSeeder.getUpdateIntervalListSetting();
+                intent.putExtra("title", "Update Interval");
+                intent.putExtra("data", dataList);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.layout_setting_language).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ArrayList<SettingDetail> dataList = (ArrayList<SettingDetail>) SettingDetailSeeder.getLanguageListSetting();
+                intent.putExtra("title", "Language");
+                intent.putExtra("data", dataList);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.layout_setting_screen_mode).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ArrayList<SettingDetail> dataList = (ArrayList<SettingDetail>) SettingDetailSeeder.getScreenModeListSetting();
+                intent.putExtra("title", "Full Screen Mode");
+                intent.putExtra("data", dataList);
+                startActivity(intent);
+            }
+        });
+
     }
+
+
 }

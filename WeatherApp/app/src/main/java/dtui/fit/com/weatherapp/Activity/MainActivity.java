@@ -198,6 +198,11 @@ public class MainActivity extends BaseFontActivity implements NavigationFragment
                 drawerLayout.closeDrawer(GravityCompat.START);
                 break;
             }
+            case (14): {
+                startActivity(new Intent(this, FeedActivity.class));
+                drawerLayout.closeDrawer(GravityCompat.START);
+                break;
+            }
         }
     }
 

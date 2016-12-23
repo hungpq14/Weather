@@ -25,7 +25,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
  */
 public class NavigationFragment extends Fragment {
     private NavigationDrawerCallbacks mCallbacks;
-    LinearLayout itemSetting, itemMap, itemLocation, itemSignIn, itemNews;
+    LinearLayout itemSetting, itemMap, itemLocation, itemSignIn, itemNews, itemWeatherSocial;
 
 
     @Nullable
@@ -71,6 +71,7 @@ public class NavigationFragment extends Fragment {
         itemLocation = (LinearLayout) getView().findViewById(R.id.navigation_item_location);
         itemSignIn = (LinearLayout) getView().findViewById(R.id.navigation_item_sign_in);
         itemNews = (LinearLayout) getView().findViewById(R.id.navigation_item_news);
+        itemWeatherSocial = (LinearLayout) getView().findViewById(R.id.navigation_item_weather_social);
 
         ((ImageView) getView().findViewById(R.id.add_loc)).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,6 +85,7 @@ public class NavigationFragment extends Fragment {
         itemLocation.setOnClickListener(navClickItem);
         itemNews.setOnClickListener(navClickItem);
         itemSignIn.setOnClickListener(navClickItem);
+        itemWeatherSocial.setOnClickListener(navClickItem);
 
     }
 
@@ -112,6 +114,8 @@ public class NavigationFragment extends Fragment {
                 selectItem(0);
             } else if (v.equals(itemNews)) {
                 selectItem(4);
+            } else if (v.equals(itemWeatherSocial)) {
+                selectItem(14);
             }
         }
     };

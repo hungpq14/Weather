@@ -6,9 +6,19 @@ package dtui.fit.com.weatherapp.Object.Event;
 
 public class SettingClickEvent {
     int position;
+    boolean shouldNoti = false;
 
-    public SettingClickEvent(int position) {
+    public SettingClickEvent(int position, boolean shouldNoti) {
         this.position = position;
+        this.shouldNoti = shouldNoti;
+    }
+
+    public boolean isShouldNoti() {
+        return shouldNoti;
+    }
+
+    public void setShouldNoti(boolean shouldNoti) {
+        this.shouldNoti = shouldNoti;
     }
 
     public int getPosition() {

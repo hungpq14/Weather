@@ -34,7 +34,7 @@ public class SignInActivity extends BaseToolbarActivity {
 
     @Override
     public String getToolbarText() {
-        return "Sign In";
+        return "";
     }
 
     @Override

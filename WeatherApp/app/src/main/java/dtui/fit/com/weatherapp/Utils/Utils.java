@@ -25,7 +25,7 @@ public class Utils {
 
     public static Bitmap blur(Context context, Bitmap image) {
         float BITMAP_SCALE = 1.4f;
-        float BLUR_RADIUS = 8.4f;
+        float BLUR_RADIUS = 6.4f;
 
         int width = Math.round(image.getWidth() * BITMAP_SCALE);
         int height = Math.round(image.getHeight() * BITMAP_SCALE);

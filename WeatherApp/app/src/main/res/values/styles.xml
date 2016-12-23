@@ -21,6 +21,13 @@
         <item name="colorAccent">@color/colorPrimary</item>
     </style>
 
+    <style name="AppThemeFeed" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimaryFeed</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryFeedDark</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
     <style name="SCBSwitch" parent="Theme.AppCompat.Light">
         <!-- active thumb & track color (30% transparency) -->
         <item name="colorControlActivated">#46bdbf</item>

@@ -66,7 +66,7 @@ public class RemindNoti extends NotificationCompat.Builder {
      */
     public Bitmap buildTextNotiRemind(int type) {
         int height = (int) Utils.convertDpToPixel(45, context);
-        int width = (int) Utils.convertDpToPixel(220, context);
+        int width = (int) Utils.convertDpToPixel(280, context);
         int textSize = (int) Utils.convertSpToPixel(14, context);
         int marginTextLine = (int) Utils.convertSpToPixel(1, context);
 

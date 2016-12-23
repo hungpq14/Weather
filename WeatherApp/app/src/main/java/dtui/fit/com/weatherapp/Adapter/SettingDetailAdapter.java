@@ -1,7 +1,6 @@
 package dtui.fit.com.weatherapp.Adapter;
 
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +11,6 @@ import org.greenrobot.eventbus.EventBus;
 
 import java.util.List;
 
-import dtui.fit.com.weatherapp.Constant.SampleSettingDetail;
 import dtui.fit.com.weatherapp.Object.Event.SettingClickEvent;
 import dtui.fit.com.weatherapp.Object.SettingDetail;
 import dtui.fit.com.weatherapp.R;
@@ -65,12 +63,11 @@ public class SettingDetailAdapter extends RecyclerView.Adapter<SettingDetailAdap
                 imgChosen.setImageResource(R.drawable.check);
             } else imgChosen.setVisibility(View.INVISIBLE);
 
-
             this.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     if (!settingDetail.isChecked()) {
-                        EventBus.getDefault().post(new SettingClickEvent(position));
+                        EventBus.getDefault().post(new SettingClickEvent(position, settingDetail.isShowNoti()));
                     }
 
                 }

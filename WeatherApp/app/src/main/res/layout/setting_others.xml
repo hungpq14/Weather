@@ -27,6 +27,7 @@
             android:textSize="15sp" />
 
         <LinearLayout
+            android:id="@+id/layout_setting_screen_mode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -47,7 +48,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:text="only Hide Notificationbar" />
+                android:text="Only Hide Notification Bar" />
 
             <View
                 android:layout_width="match_parent"
@@ -59,6 +60,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_setting_language"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/drawer_selector_item"

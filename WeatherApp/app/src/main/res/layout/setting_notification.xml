@@ -51,6 +51,7 @@
                 android:text="Current detail and forecast" />
 
             <Switch
+                android:id="@+id/switch_noti_current"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -143,6 +144,7 @@
         </RelativeLayout>
 
         <LinearLayout
+            android:id="@+id/layout_setting_location"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/drawer_selector_item"
@@ -174,6 +176,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_setting_priority"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/drawer_selector_item"

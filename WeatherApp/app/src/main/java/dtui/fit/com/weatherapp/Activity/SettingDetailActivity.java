@@ -1,11 +1,11 @@
 package dtui.fit.com.weatherapp.Activity;
 
 import android.app.NotificationManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.widget.RelativeLayout;
 
 import org.greenrobot.eventbus.EventBus;
@@ -16,10 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dtui.fit.com.weatherapp.Adapter.SettingDetailAdapter;
-import dtui.fit.com.weatherapp.Adapter.TemperatureAdapter;
 import dtui.fit.com.weatherapp.Base.BaseToolbarActivity;
-import dtui.fit.com.weatherapp.Constant.ExampleHourlyForecast;
-import dtui.fit.com.weatherapp.Constant.SampleSettingDetail;
 import dtui.fit.com.weatherapp.Notification.RemindNoti;
 import dtui.fit.com.weatherapp.Object.Event.SettingClickEvent;
 import dtui.fit.com.weatherapp.Object.SettingDetail;
@@ -27,7 +24,7 @@ import dtui.fit.com.weatherapp.R;
 
 public class SettingDetailActivity extends BaseToolbarActivity {
     private SettingDetailAdapter adapter;
-    private List<SettingDetail> smartAlertListSetting = new ArrayList<>();
+    private List<SettingDetail> detailListSetting = new ArrayList<>();
 
     @Override
     public int getLayoutId() {
@@ -36,7 +33,7 @@ public class SettingDetailActivity extends BaseToolbarActivity {
 
     @Override
     public String getToolbarText() {
-        return "Smart Alert";
+        return getIntent().getStringExtra("title");
     }
 
     @Override
@@ -65,8 +62,9 @@ public class SettingDetailActivity extends BaseToolbarActivity {
 
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        smartAlertListSetting = SampleSettingDetail.getSmartAlertListSetting();
-        adapter = new SettingDetailAdapter(smartAlertListSetting);
+        detailListSetting = (List<SettingDetail>) getIntent().getSerializableExtra("data");
+        Log.d("Setting detail", detailListSetting.size() + "");
+        adapter = new SettingDetailAdapter(detailListSetting);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
@@ -75,24 +73,25 @@ public class SettingDetailActivity extends BaseToolbarActivity {
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onSettingChange(SettingClickEvent event) {
         int position = event.getPosition();
-        for (SettingDetail sampleSettingDetail : smartAlertListSetting) {
+        for (SettingDetail sampleSettingDetail : detailListSetting) {
             if (sampleSettingDetail.isChecked()) sampleSettingDetail.setChecked(false);
         }
-        smartAlertListSetting.get(position).setChecked(true);
+        detailListSetting.get(position).setChecked(true);
         adapter.notifyDataSetChanged();
 
-        if (event.getPosition() != 0) {
-            RemindNoti temp = new RemindNoti(getApplicationContext(), 1);
-            RemindNoti temp2 = new RemindNoti(getApplicationContext(), 0);
+        if (event.isShouldNoti())
+            if (event.getPosition() != 0) {
+                RemindNoti temp = new RemindNoti(getApplicationContext(), 1);
+                RemindNoti temp2 = new RemindNoti(getApplicationContext(), 0);
 
-            NotificationManager notificationmanager = (NotificationManager) getApplicationContext().getSystemService(getApplicationContext().NOTIFICATION_SERVICE);
-            notificationmanager.notify(0, temp.build());
-            notificationmanager.notify(1, temp2.build());
-        } else {
-            NotificationManager notificationmanager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-            notificationmanager.cancel(0);
-            notificationmanager.cancel(1);
-        }
+                NotificationManager notificationmanager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+                notificationmanager.notify(0, temp.build());
+                notificationmanager.notify(1, temp2.build());
+            } else {
+                NotificationManager notificationmanager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+                notificationmanager.cancel(0);
+                notificationmanager.cancel(1);
+            }
 
     }
 
